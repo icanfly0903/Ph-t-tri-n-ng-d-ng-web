@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            margin-left: 30px;
+            font-size: 25px;
+        }
+        
+        input {
+            font-size: 25px;
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="">
+        <label for="name">Username</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="pass">Password</label>
+        <input type="password" name="password" id="pass" placeholder="Password">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="" id="email" value="email@gmail.com">
+        <br>
+        <label for="descript">Description</label>
+        <br>
+        <textarea name="" id="descript" cols="50" rows="8"></textarea>
+        <br>
+        <p>Please select your facvorite coding language:</p>
+        <input type="radio" checked name="coding" id="" value="javascript">JavaScript
+        <br>
+        <input type="radio" name="coding" id="" value="python">Python
+        <br>
+        <input type="radio" name="coding" id="" value="c">C/C++/C#
+        <br>
+        <input type="radio" name="coding" id="java">Java
+        <p>Please choose your favorite sport:</p>
+        <input type="checkbox" name="sport" id="" value="tabletennis">Table Tennis
+        <br>
+        <input type="checkbox" name="sport" id="" value="football">Football
+        <br>
+        <input type="checkbox" name="sport" id="" value="basketball">Basketball
+        <p>Please choose your favorite operating system(OS):</p>
+        <select style="width: 150px; font-size: 20px;" name="os" id="">
+            <option value="android">Android</option>
+            <option value="ios">IOS</option>
+            <option value="microsoft">Microsoft</option>
+        </select>
+        <br>
+        <input style="width: 130px;" type="submit" value="Submit">
+        <!-- <button type=" submit ">Submit</button> -->
+    </form>
+</body>
+
+</html>

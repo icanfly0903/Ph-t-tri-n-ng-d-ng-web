@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: powderblue;
+}
+
+div.header {
+    text-align: center;
+}
+
+div.detail {
+    padding: 20px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 100px;
+    font-size: 20px;
+}
+
+.ava {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    /* float: left; */
+    margin-right: 10px;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.school {
+    width: 200px;
+}

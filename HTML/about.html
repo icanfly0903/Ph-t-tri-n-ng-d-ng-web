@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            font-size: 25px;
+        }
+        
+        .menu {
+            margin: 40px;
+            position: fixed;
+        }
+        
+        .detail {
+            margin-left: 250px;
+            /* float: right; */
+        }
+        
+        .sky {
+            width: 700px;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        
+        td,
+        th {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: red;
+        }
+        /* .clearfix:after {
+            clear: both;    
+            content: ".";
+            display: block;
+            width: 0px;
+            height: 0px;
+        } */
+    </style>
+</head>
+
+<body>
+    <ol class="menu">
+        <li><a href="/HTMLtest/TH.html">Home Page</a></li>
+        <li>
+            <p>Picture</p>
+            <ul>
+                <li><a href="../images/flag.png" download><sup>Viet</sup> Nam <sub>flag</sub></a></li>
+                <!--Tải ảnh khi bấm vào link-->
+                <li><a href="../images/flag1.png" target="_blank">Beautiful Picture</a></li>
+                <!--Xem ảnh-->
+            </ul>
+        </li>
+
+        <li><a href="#section-html">HTML</a></li>
+        <li><a href="#section-css">CSS</a></li>
+        <li>
+            <a href="#javascript">JavaScript</a>
+        </li>
+        <li><a href="https://www.google.com/" target="_blank">Google</a></li>
+        <li><a href="mailto:thegrela134@gmail.com">Email Me</a></li>
+    </ol>
+    <div class="detail">
+        <h2 id="section-html">HTML</h2>
+        <p>
+            Lorem ipsum dolor, <strong>sit amet consectetur adipisicing elit</strong>. Eveniet sit eaque, debitis recusandae reiciendis culpa sequi quaerat architecto commodi distinctio officiis ex dolor fugiat repellat dolores voluptate. Iusto, voluptas
+            aut porro ipsa ullam doloribus assumenda eius. Odit facilis libero dolore architecto, incidunt magnam facere natus corrupti minima alias eaque excepturi aperiam quisquam itaque cumque illum accusantium eveniet, quae iusto voluptates! Repellendus
+            suscipit maiores, ab beatae ullam dolor laborum amet facere labore id omnis dignissimos sapiente perspiciatis obcaecati dolore incidunt voluptatum porro consequuntur doloremque praesentium distinctio sint, corporis nostrum cupiditate. Neque
+            dignissimos asperiores a commodi iusto tempora dicta debitis magnam impedit?
+        </p>
+        <h2 id="section-css">CSS</h2>
+        <p>
+            Lorem ipsum dolor <i>sit amet consectetur adipisicing elit</i>. Illo dolorem sequi perspiciatis deleniti quam aspernatur eius accusamus, doloremque nostrum fugiat molestias debitis. Sit reprehenderit debitis error est expedita. Fuga, numquam!
+            Natus, consequuntur sequi atque minus quae, officia nesciunt neque magnam corporis laborum labore enim nobis. Alias quis tenetur ipsam dolorem necessitatibus numquam veniam amet similique repellendus, qui cupiditate. Deserunt velit commodi
+            libero excepturi esse hic sunt provident magni aut ea. Aperiam laborum obcaecati perspiciatis sit magni quis, ea culpa at? Explicabo quidem ut eveniet fugiat quasi consequuntur, ratione, nesciunt error reiciendis dignissimos assumenda delectus
+            vel possimus? Ratione consectetur reiciendis ad.
+        </p>
+        <img class="sky" src="/images/sky3.jpg" alt="Beautiful sky with clouds"><br>
+        <ul style="list-style-type: circle;">
+            <li>HTML Basic</li>
+            <li>HTML Elements</li>
+            <li>HTML Attributes</li>
+            <li>HTML Headings</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Phone's name</th>
+            </tr>
+            <tr>
+                <td>2014-2016</td>
+                <td>Nokia 105</td>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>iPhone 4s</td>
+            </tr>
+            <tr>
+                <td>2017</td>
+                <td>iPhone 6 Plus</td>
+            </tr>
+            <tr>
+                <td>2018-now</td>
+                <td>iPhone 6s</td>
+            </tr>
+        </table>
+        <h2>JavaScript</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/W6NZfCO5SIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <a href="#">Jump to Top</a>
+    </div>
+</body>
+
+</html>
