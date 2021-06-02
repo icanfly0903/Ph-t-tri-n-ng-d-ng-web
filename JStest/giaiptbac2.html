@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giai phuong trinh bac 2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Giải phương trình bậc 2</title>
+	<style type="text/css">
+		label {
+			display: grid;
+			justify-content: left;
+			margin: 8px;
+		}
+		input {
+			display: grid;
+			margin: 8px;
+		}
+	</style>
 </head>
-
 <body>
-    <h1>Giai phuong trinh bac 2: ax<sup>2</sup> + bx = c</h1>
-    <form action="" method="GET">
-        <div>
-            <label for=""></label>
-            <input type="number" id="first" value="a">
-        </div>
-    </form>
+	<h1>Giải phương trình bậc 2: ax<sup>2</sup> + bx + c = 0</h1>
+	<form id="form-data" method="" action="" onsubmit="calculate();return false;">
+		<div>
+			<label for="a">Hệ số thứ nhất</label>
+			<input type="number" name="a" id="a" placeholder="a" required>
+		</div>
+		<div>
+			<label for="so2">Hệ số thứ hai</label>
+			<input type="number" name="b" id="b" placeholder="b" required>
+		</div>
+		<div>
+			<label for="so1">Hệ số thứ ba</label>
+			<input type="number" name="c" id="c" placeholder="c" required>
+		</div>
+		<div>
+			<input type="submit" value="Ket qua">
+		</div>
+	</form>
+	<h3>Kết quả: <span id="result"></span></h3>
+	<script type="text/javascript">
+		function calculate() {
+			let form = document.getElementById("form-data");
+			let input_form = form.querySelectorAll("input");
+			let a = input_form[0].value;
+			let b = input_form[1].value;
+			let c = input_form[2].value;
+			let result = document.getElementById("result");
+			if (a == 0){
+				if (b == 0) {
+					if (c != 0){
+						result.innerText = "Phương trình vô nghiệm";
+					} else {
+						result.innerText = "Phương trình có vô số nghiệm";
+					}
+				} else {
+					result.innerText = "Phương trình có nghiệm duy nhất là: " + -c/b;
+				}
+			} else {
+				let delta = (b*b-4*a*c);
+				if (delta > 0) {
+					let r1 = (-b + Math.sqrt(delta))/(2*a);
+					let r2 = (-b - Math.sqrt(delta))/(2*a);
+					result.innerText = "Phương trình có 2 nghiệm phân biệt là: " + r1 + " va " + r2; 
+				} else if(delta == 0) {
+					result.innerText = "Phương trình có nghiệm kép là: " + (-b)/(2*a);
+				} else {
+					result.innerText = "Phương trình vô nghiệm";
+				}
+			}
+		}
+	</script>
 </body>
-
 </html>
