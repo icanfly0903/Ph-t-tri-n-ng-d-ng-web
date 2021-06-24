@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+	<style>
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	body {
+		font-family: sans-serif;
+		font-size: 13px;
+		color: white;
+		font-weight: bold;		
+	}
+
+	.container {		
+		background-image: linear-gradient(180deg, pink, #0066ff);
+		height: 100vh;
+		width: 100vw;
+		justify-content: center;
+		align-items: center;
+		display: grid;
+	}
+
+	.detail-form {
+		margin-top: 10px;
+		height: 650px;
+		width: 400px;
+		border-radius: 10px;
+		background-image: url("../images/IMG_3.jpg");
+		background-size: cover;
+		background-position: center;
+		justify-content: center;
+		/*align-items: center;*/
+		display: grid;
+	}
+
+	#buttons {
+		width: 100%;
+		margin-top: 70px;
+		/*margin-bottom: 30px;*/
+		/*border-bottom: 2px groove black;*/
+		
+	}
+
+	button {
+		font-size: 16px;
+		margin-right: 20px;
+		border: 0px;
+		color: white;
+		background-color: transparent;
+	}
+
+	button:hover {
+		border-bottom: 2px groove yellow;
+	}
+
+	input {
+		width: 270px;
+		height: 40px;
+		background-color: #ffffff75;
+		border-radius: 20px;
+		border: unset;
+		margin-top: 8px;
+		margin-bottom: 20px;
+		font-size: 17px;
+		padding-left: 10px;
+	}
+
+	#check {
+		height: 13px;
+		width: 13px;
+		margin-left: 10px;
+	}
+
+	#sign {		
+		justify-content: center;
+		align-items: center;
+		display: grid;
+	}
+
+	input[type=submit] {
+		height: 35px;
+		width: 100px;
+		color: white;
+		font-weight: bold;
+		font-size: 15px;
+		border: 0px;
+		background-image: linear-gradient(45deg, blue, red);
+	}
+
+	input[type=submit]:hover {
+		background-image: linear-gradient(45deg, green, blue);
+	}
+
+</style>
+</head>
+<body>
+	<div class="container">		
+		<div class="detail-form">						
+			<div id="buttons">
+				<button onclick="signIn();">SIGN IN</button>
+				<button onclick="signUp();">SIGN UP</button>
+			</div>
+			<form action="#" id="form-signup" onsubmit="return register()">				
+				<div class="inputField">
+					<label for="user">USERNAME</label><br>
+					<input type="text" id="user" required>
+				</div>
+				<div class="inputField">
+					<label for="e-mail">E-MAIL</label><br>
+					<input type="email" id="e-mail" required>
+				</div>
+				<div class="inputField">
+					<label for="pass">PASSWORD</label><br>
+					<input type="password" id="pass" pattern=".{8,}" title="8 or more characters" required>
+				</div>
+				<div class="inputField">
+					<label for="re-pass">RE-PASSWORD</label><br>
+					<input type="password" id="re-pass" pattern=".{8,}" title="8 or more characters" required>
+				</div>
+				<div class="agree">					
+					<input type="checkbox" id="check"><span style="font-size: 16px;"> I agree</span>
+				</div>
+				<div id="sign">
+					<input type="submit" value="Sign Up">
+				</div>				
+			</form>
+			<form action="slide.html" id="form-signin" onsubmit="logIn();return false;">				
+				<div class="inputField">
+					<label for="user">USERNAME</label><br>
+					<input type="text" id="user" required>
+				</div>			
+				<div class="inputField">
+					<label for="pass">PASSWORD</label><br>
+					<input type="password" id="pass" pattern=".{8,}" title="8 or more characters" required>
+				</div>				
+				<div class="agree">					
+					<input type="checkbox" id="check"><span style="font-size: 16px;"> Remember?</span>
+				</div>
+				<div id="sign">
+					<input type="submit" value="Sign In">
+				</div>	
+				<h3 style="text-align:center; padding: 10px;" id="message"></h3>			
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+		document.getElementById('form-signin').style.display = 'block';
+		document.getElementById('form-signup').style.display = 'none';
+
+
+		function signIn() {
+			document.getElementById('form-signin').style.display = 'block';
+			document.getElementById('form-signup').style.display = 'none';
+		}
+
+		function signUp() {
+			document.getElementById('form-signin').style.display = 'none';
+			document.getElementById('form-signup').style.display = 'block';			
+		}
+
+		function register() {
+			let user = document.getElementById('user').value;
+			let email = document.getElementById('e-mail').value;
+			let pass = document.getElementById('pass').value;
+			let re_pass = document.getElementById('re-pass').value;
+			let res = pass.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);			
+
+			if(pass != re_pass) {
+				alert('Password và Re-Password phải giống nhau!');
+				return false;
+			} else if(res == null || res == undefined){
+				alert("Password gồm số, chữ thường và chữ hoa!");
+				return false;
+			} 
+			alert('Đăng ký thành công');
+			return true;							
+		}
+
+		function logIn() {
+			let msg = document.getElementById('message');
+			msg.innerText = "Đăng nhập thành công!"
+		}		
+	</script>
+</body>
+</html>
