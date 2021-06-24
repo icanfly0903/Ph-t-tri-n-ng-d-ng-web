@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Slide Show</title>
+	<style type="text/css">
+	#container {
+		width: 100vw;
+		height: 100vh;
+		background-image: linear-gradient(45deg, pink, powderblue);
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	h1 {	
+		text-align: center;
+		color: green;
+	}
+
+	#slide {
+		background-color: white;
+		height: 500px;
+		width: 500px;
+		position: relative;
+	}
+
+	#image-slide {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		/*transform: translate(10px, 10px);*/
+	}
+
+	.arrow {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		justify-content: space-between;
+		align-items: center;
+		display: flex;
+		box-shadow: blue 0 0 10px;
+	}
+
+	button {
+		border: 0px;
+	}
+
+	button:hover {
+		background-color: transparent;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Slider Animation by Grela</h1>
+		<div id="slide">
+			<div class="arrow">
+				<button onclick="preImage();">
+					<img style="transform: rotate(180deg);" width="30px" height="30px" src="../images/arrow-icon-right.png">
+				</button>
+				<button onclick="nextImage();">
+					<img width="30px" height="30px" src="../images/arrow-icon-right.png">	
+				</button>				
+			</div>
+			<img id="image-slide" src="../images/IMG_0.jpg" alt="">
+		</div>
+	</div>
+	<script type="text/javascript">
+		let url = "../images/";
+		let images = [url + 'IMG_0.jpg', url + 'IMG_1.jpg', url + 'IMG_2.jpg', url + 'IMG_3.jpg',
+		url + 'IMG_4.jpg', url + 'IMG_5.jpg'];
+		var index = 0;
+
+		function nextImage() {
+			let img = document.getElementById('image-slide');
+			if(index < images.length - 1) {
+				index++;
+			} else {
+				index = 0;	
+			}
+			img.src = images[index];
+		}
+
+		function preImage() {
+			let img = document.getElementById('image-slide');
+			if(index > 0 ) {
+				index--;
+			} else {
+				index = images.length - 1;	
+			}
+			img.src = images[index];
+		}
+
+		// C1:
+		// window.onload = function() {
+		// 	setInterval(()=>{
+		// 		let img = document.getElementById('image-slide');
+		// 		if(index < images.length - 1) {
+		// 			index++;
+		// 		} else {
+		// 			index = 0;	
+		// 		}
+		// 		img.src = images[index];
+		// 	}, 1000)
+		// }
+
+		//C2: cách viết khác của window.onload
+		// (()=>{
+		// 	setInterval(()=>{
+		// 		let img = document.getElementById('image-slide');
+		// 		if(index < images.length - 1) {
+		// 			index++;
+		// 		} else {
+		// 			index = 0;	
+		// 		}
+		// 		img.src = images[index];
+		// 	}, 1000)
+		// })()
+		//  function(){} = ()=>{}
+	</script>
+</body>
+</html>
